@@ -3,6 +3,10 @@
     "description": "Extends the Buffer object with additional convenience functions",
     "version": "0.1.0",
     "main": "bufferext.js",
+    "repository" : {
+        "type" : "git", 
+        "url" : "https://github.com/jseidelin/bufferext.git"
+    },
     "dependencies": {
       "int64-native": "*"
     }
