@@ -1,0 +1,9 @@
+{
+    "name": "bufferext",
+    "description": "Extends the Buffer object with additional convenience functions",
+    "version": "0.1.0",
+    "main": "bufferext.js",
+    "dependencies": {
+      "int64-native": "*"
+    }
+}
