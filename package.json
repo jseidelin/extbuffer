@@ -1,7 +1,7 @@
 {
     "name": "bufferext",
     "description": "Extends the Buffer object with additional convenience functions",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "main": "bufferext.js",
     "repository" : {
         "type" : "git", 
