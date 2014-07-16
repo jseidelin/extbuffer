@@ -1,4 +1,3 @@
-var Int64 = require("int64-native");
 
 if (!Buffer.prototype.readUInt24LE) {
     Buffer.prototype.readUInt24LE = function(offset, noAssert) {
@@ -120,23 +119,31 @@ if (!Buffer.prototype.writeBytes) {
 
 if (!Buffer.prototype.readUInt64String) {
     Buffer.prototype.readUInt64String = function(offset, noAssert) {
-        var int64 = new Int64(
-            this.readUInt32LE(offset + 4, noAssert), 
-            this.readUInt32LE(offset, noAssert)
-        );
-        return int64.toUnsignedDecimalString();
+        var str = "0x";
+        for (var j=7;j>=0;j--) {
+            str += ("0" + this.readUInt8(offset+j, noAssert).toString(16)).substr(-2);
+        }
+        return str;
     };
 }
 
 if (!Buffer.prototype.readInt64String) {
-    Buffer.prototype.readInt64String = function(offset, noAssert) {
-        var int64 = new Int64(
-            this.readUInt32LE(offset + 4, noAssert), 
-            this.readUInt32LE(offset, noAssert)
-        );
-        return int64.toSignedDecimalString();
+    Buffer.prototype.readInt64String = Buffer.prototype.readUInt64String;
+}
+
+
+if (!Buffer.prototype.writeUInt64String) {
+    Buffer.prototype.writeUInt64String = function(value, offset, noAssert) {
+        for (var j=0;j<8;j++) {
+            this.writeUInt8(parseInt(value.substr(2 + (7 - j) * 2, 2), 16), offset + j, noAssert);
+        }
     };
 }
+
+if (!Buffer.prototype.writeInt64String) {
+    Buffer.prototype.writeInt64String = Buffer.prototype.writeUInt64String;
+}
+
 
 if (!Buffer.prototype.readFloat16LE) {
     Buffer.prototype.readFloat16LE = function(offset, noAssert) {

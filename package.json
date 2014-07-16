@@ -8,6 +8,5 @@
         "url" : "https://github.com/jseidelin/bufferext.git"
     },
     "dependencies": {
-      "int64-native": "*"
     }
 }
