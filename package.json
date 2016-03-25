@@ -1,8 +1,9 @@
 {
   "name": "extbuffer",
   "description": "Extends the Buffer object with additional methods",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/jseidelin/extbuffer.git"
