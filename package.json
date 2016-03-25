@@ -1,12 +1,20 @@
 {
-    "name": "bufferext",
-    "description": "Extends the Buffer object with additional convenience functions",
-    "version": "0.1.1",
-    "main": "bufferext.js",
-    "repository" : {
-        "type" : "git", 
-        "url" : "https://github.com/jseidelin/bufferext.git"
-    },
-    "dependencies": {
-    }
+  "name": "extbuffer",
+  "description": "Extends the Buffer object with additional methods",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jseidelin/extbuffer.git"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec tests/spec.js"
+  },
+  "dependencies": {
+    "ieee754": "^1.1.6"
+  },
+  "devDependencies": {
+    "expect": "^1.12.2",
+    "mocha": "^2.3.3"
+  }
 }
