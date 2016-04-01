@@ -3,7 +3,10 @@ extbuffer
 
 Extends Buffer objects with additional convenience methods
 
-[![Build Status](https://travis-ci.org/jseidelin/extbuffer.svg?branch=master)](https://travis-ci.org/jseidelin/extbuffer)
+[![Build Status](https://img.shields.io/travis/jseidelin/extbuffer.svg)](https://travis-ci.org/jseidelin/extbuffer)
+[![npm version](https://img.shields.io/npm/v/extbuffer.svg)](https://www.npmjs.com/package/extbuffer)
+
+
 
 ## Usage
 
@@ -13,6 +16,6 @@ var fs = require("fs");
 
 var buffer = new ExtBuffer(fs.readFileSync("file.ext"));
 
-// read a signed, 24-bit integer 
+// read a signed, 24-bit integer
 buffer.reatInt24LE(0);
 ```
